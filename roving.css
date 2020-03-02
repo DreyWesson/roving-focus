@@ -1,0 +1,26 @@
+
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+.instructions {
+  margin: 8px;
+}
+
+.toolbar {
+  display: flex;
+}
+
+.toolbar button {
+  display: inline-block;
+  font-size: 16px;
+  border: 2px solid black;
+  border-left: none;
+  padding: 8px;
+}
+
+.toolbar button:first-of-type {
+  border-left: 2px solid black;
+}

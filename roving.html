@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example of tabindex=0</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/roving.css">
+  </head>  
+  <body>
+    <div class="instructions">
+      (click here, press <code>TAB</code>, then press ➡️)
+    </div>
+    <div role="toolbar" class="toolbar">
+      <button tabindex="0">Undo</button>
+      <button tabindex="-1">Redo</button>
+      <button tabindex="-1">Cut</button>
+      <button tabindex="-1">Copy</button>
+      <button tabindex="-1">Paste</button>
+    </div>
+    <script src="/roving.js"></script>
+  </body>
+</html>
