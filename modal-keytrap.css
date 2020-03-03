@@ -25,6 +25,11 @@
   left:25%;
   display:none;
 }
+.modal-toggle {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
 .field{
   display: inline-block;
 }
