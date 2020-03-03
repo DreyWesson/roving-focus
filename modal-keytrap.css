@@ -41,6 +41,11 @@ button {
   color: white;
   /* left: 120px; */
 }
+.dim {
+  width: 95%;
+
+  margin: 0 auto;
+}
 .modal h1 {
   text-align:center;
 }
