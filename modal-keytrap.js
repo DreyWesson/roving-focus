@@ -1,6 +1,7 @@
 // Will hold previously focused element
 var focusedElementBeforeModal;
-var body = document.querySelector('body');
+var body = document.querySelector('.dim');
+console.log(body)
 
 // Find the modal and its overlay
 var modal = document.querySelector('.modal');
@@ -34,6 +35,9 @@ function openModal() {
   // show the modal and overlay
   modal.style.display = 'block';
   modalOverlay.style.display = 'block';
+  modalToggle.style.background = "#ffffff";
+  modalToggle.style.color = "black";
+  body.style.opacity ='0.2';
 
   // focus first child
   firstTabStop.focus();
@@ -65,6 +69,9 @@ function closeModal() {
   // Hide the modal and overlay
   modal.style.display = "none";
   modalOverlay.style.display = "none";
+  modalToggle.style.background = "rgb(103, 103, 139)";
+  modalToggle.style.color = "#ffffff";
+  body.style.opacity ='1.0';
 
 
   // Set focus back to element that had it before the modal was opened
