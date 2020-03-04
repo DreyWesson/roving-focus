@@ -17,35 +17,57 @@
   margin-left:auto;
   margin-right:auto;
   padding: 15px;
-  border: thin #000 solid;
+  border-radius: 5px;
   background-color:#fff;
   z-index:3; /* places the modal dialog on top of everything else */
   position:fixed;
   top:25%;
   left:25%;
   display:none;
+  box-shadow: 0 10px 50px #657786;
 }
 .modal-toggle {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   text-align: center;
 }
+/* input {
+  display: flex;
+} */
 .field{
   display: inline-block;
+  /* justify-content: space-between; */
+  margin-bottom: 10px;
 }
 button {
   border: 1px solid rgb(103, 103, 139);
   background-color: rgb(103, 103, 139);
   border-radius: 15px;
-  padding: 8px;
+  padding: 5px 10px;
   color: white;
   /* left: 120px; */
 }
 .dim {
   width: 95%;
-
   margin: 0 auto;
 }
 .modal h1 {
   text-align:center;
 }
+:focus {
+  outline: 0;
+  box-shadow: 0 0 8px 3px rgb(103, 103, 139);
+}
+button#signup {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* @media screen and (min-width: 1075px) {
+  button#signup {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+} */
