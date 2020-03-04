@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
+    <title>Roving Focus</title>
+    <meta name="description" content="A really awesome blog about accessibility">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="mainroving.css">
   </head>
@@ -11,10 +11,10 @@
 
     <div class="demo">
 
-      <h3>Drink Options</h3>
+      <h3 id="drink-options">Drink Options</h3>
 
-      <ul id="group1" class="radiogroup">
-        <li tabindex="0" class="radio" checked>
+      <ul id="group1" class="radiogroup" aria-labelledby="drink-options group1">
+        <li tabindex="0" class="radio"checked>
           Water
         </li>
         <li tabindex="-1" class="radio">
@@ -31,7 +31,7 @@
         </li>
       </ul>
     </div>
-    <div><button>Click me</button></div>
+    <div><button >Click me</button></div>
 
     <script src="mainroving.js"></script>
 
