@@ -6,7 +6,9 @@
 // have to remember what keycode 37 means :)
 const KEYCODE = {
   LEFT: 37,
-  RIGHT: 39
+  RIGHT: 39,
+  UP: 38,
+  DOWN: 40
 };
 
 const toolbar = document.querySelector('.toolbar');
@@ -16,10 +18,12 @@ toolbar.addEventListener('click', onClick);
 function onKeyDown(event) {
   switch (event.keyCode) {
     case KEYCODE.RIGHT:
+    case KEYCODE.DOWN:
       event.preventDefault();
       focusNextItem();
       break;
     case KEYCODE.LEFT:
+    case KEYCODE.UP:
       event.preventDefault();
       focusPreviousItem();
       break;

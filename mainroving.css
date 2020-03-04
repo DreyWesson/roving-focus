@@ -27,9 +27,21 @@
   display: block;
   width: 8px;
   height: 8px;
-  background: red;
+  background: rgb(103, 103, 139);
   position: absolute;
   left: -16px;
   top: 5px;
   border-radius: 50%;
+}
+:focus {
+  outline: 0;
+  box-shadow: 0 0 8px 3px rgb(103, 103, 139);
+}
+button {
+  border: 1px solid rgb(103, 103, 139);
+  background-color: rgb(103, 103, 139);
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: white;
+  /* left: 120px; */
 }
