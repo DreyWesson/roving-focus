@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    customElements.define('show-hello', class extends HTMLElement {
+      connectedCallback() {
+        const shadow = this.attachShadow({mode: 'open'});
+        shadow.innerHTML = `<p>
+          Hello, ${this.getAttribute('name')}
+        </p>`;
+      }
+    });
+    </script>
+
+    <script>
+      const header = document.createElement('header');
+      const shadowRoot = header.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>';
+    </script>
+
+
+    <header>
+      <h1>Shadow DOM</h1>
+    </header>
+
+    <show-hello name="Wesson"></show-hello>
+</body>
+</html>
