@@ -32,13 +32,14 @@
   margin: 0 auto;
   text-align: center;
 }
-/* input {
-  display: flex;
-} */
+div.input {
+  display: inline-block;
+}
 .field{
   display: inline-block;
   /* justify-content: space-between; */
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 button {
   border: 1px solid rgb(103, 103, 139);
@@ -60,14 +61,42 @@ button {
   box-shadow: 0 0 8px 3px rgb(103, 103, 139);
 }
 button#signup {
-  display: block;
-  margin: 0 auto;
+  display: block; 
+  margin-left: auto;
   text-align: center;
 }
-/* @media screen and (min-width: 1075px) {
+
+@media screen and (min-width: 960px) {
+  div.input {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .field{
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  button {
+    border: 1px solid rgb(103, 103, 139);
+    background-color: rgb(103, 103, 139);
+    border-radius: 15px;
+    padding: 5px 10px;
+    color: white;
+    /* left: 120px; */
+  }
+  .dim {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .modal h1 {
+    text-align:center;
+  }
+  :focus {
+    outline: 0;
+    box-shadow: 0 0 8px 3px rgb(103, 103, 139);
+  }
   button#signup {
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     text-align: center;
   }
-} */
+}

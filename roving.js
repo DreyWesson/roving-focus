@@ -8,12 +8,12 @@ const KEYCODE = {
   LEFT: 37,
   RIGHT: 39,
   UP: 38,
-  DOWN: 40
+  DOWN: 40,
 };
 
-const toolbar = document.querySelector('.toolbar');
-toolbar.addEventListener('keydown', onKeyDown);
-toolbar.addEventListener('click', onClick);
+const toolbar = document.querySelector(".toolbar");
+toolbar.addEventListener("keydown", onKeyDown);
+toolbar.addEventListener("click", onClick);
 
 function onKeyDown(event) {
   switch (event.keyCode) {
@@ -33,10 +33,9 @@ function onKeyDown(event) {
 function onClick(event) {
   // Make sure the clicked item is one of the buttons and
   // not something random :)
-  const buttons = Array.from(toolbar.querySelectorAll('button'));
-  if (buttons.indexOf(event.target) == -1) {
-    return;
-  }
+  // const buttons = Array.from(toolbar.querySelectorAll('button'));
+  const buttons = [...toolbar.querySelectorAll("button")];
+  if (buttons.indexOf(event.target) == -1) return;
   activate(event.target);
 }
 
@@ -44,25 +43,21 @@ function onClick(event) {
 // If so, moving focus to it.
 function focusNextItem() {
   const item = document.activeElement;
-  if (item.nextElementSibling) {
-    activate(item.nextElementSibling);
-  }
+  if (item.nextElementSibling) activate(item.nextElementSibling);
 }
 
 // Figure out if the current element has a previous sibling.
 // If so, moving focus to it.
 function focusPreviousItem() {
   const item = document.activeElement;
-  if (item.previousElementSibling) {
-    activate(item.previousElementSibling);
-  }
+  if (item.previousElementSibling) activate(item.previousElementSibling);
 }
 
 // This is where the roving tabindex magic happens!
 function activate(item) {
   // Set all of the buttons to tabindex -1
-  toolbar.querySelectorAll('button').forEach((btn) => btn.tabIndex = -1);
-  
+  toolbar.querySelectorAll("button").forEach((btn) => (btn.tabIndex = -1));
+
   // Make the current button "active"
   item.tabIndex = 0;
   item.focus();
