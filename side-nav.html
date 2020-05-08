@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Lewis and Surma" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
+    <meta name="theme-color" content="#EA2663" />
+    <title>Side Nav</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link href="./side-nav.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <button class="js-menu-show header__menu-toggle material-icons">
+        menu
+      </button>
+    </div>
+
+    <aside class="js-side-nav side-nav">
+      <nav class="js-side-nav-container side-nav__container">
+        <button class="js-menu-hide side-nav__hide material-icons">
+          close
+        </button>
+        <header class="side-nav__header">
+          Menu
+        </header>
+        <ul class="side-nav__content">
+          <li>
+            <a href="/one">One</a>
+          </li>
+          <li>
+            <a href="/two">Two</a>
+          </li>
+          <li>
+            <a href="/three">Three</a>
+          </li>
+          <li>
+            <a href="/four">Four</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <h1>The Bacon Ipsum Blog</h1>
+      <p>
+        Bacon ipsum dolor amet t-bone alcatra tenderloin cupim, shoulder salami
+        beef ribs venison pancetta tri-tip. Visit
+        <a href="https://robdodson.me">my blog.</a> Porchetta rump shoulder,
+        filet mignon picanha venison ball tip ham biltong. Strip steak shank
+        capicola fatback, bacon meatball landjaeger chicken pork belly.
+        Prosciutto alcatra boudin, venison meatloaf andouille turducken jowl
+        tongue. Ham hock andouille jerky pork belly shoulder, bresaola bacon
+        rump cupim chicken.
+      </p>
+      <input type="range" />
+      <div role="slider">I'm a slider</div>
+    </main>
+
+    <!-- TODO -->
+    <script src="./inert.js"></script>
+    <!-- <script src="/side-nav.js"></script> -->
+  </body>
+</html>

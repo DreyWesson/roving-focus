@@ -1,11 +1,10 @@
 // Will hold previously focused element
 var focusedElementBeforeModal;
 
-// Find the modal, its overlay && toggle button
+// Find the modal and its overlay
 var modal = document.querySelector(".modal");
-var body = document.querySelector(".dim");
-
 var modalOverlay = document.querySelector(".modal-overlay");
+
 var modalToggle = document.querySelector(".modal-toggle");
 modalToggle.addEventListener("click", openModal);
 
@@ -18,30 +17,25 @@ function openModal() {
 
   // Listen for indicators to close the modal
   modalOverlay.addEventListener("click", closeModal);
-  // Sign-up button
+  // Sign-Up button
   var signUpBtn = modal.querySelector("#signup");
   signUpBtn.addEventListener("click", closeModal);
-  body.addEventListener("click", closeModal);
 
   // Find all focusable children
   var focusableElementsString =
-    'a[href], area[href],input:not([disabled]), select:not([disabled]),textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable';
+    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
   var focusableElements = modal.querySelectorAll(focusableElementsString);
-  //Convert Nodelist to Array
-  // focusableElements = Array.prototype.slice.call(focusableElements);
-  focusableElements = [...focusableElements];
+  // Convert NodeList to Array
+  focusableElements = Array.prototype.slice.call(focusableElements);
 
   var firstTabStop = focusableElements[0];
   var lastTabStop = focusableElements[focusableElements.length - 1];
 
-  // show the modal and overlay
+  // Show the modal and overlay
   modal.style.display = "block";
   modalOverlay.style.display = "block";
-  modalToggle.style.background = "#ffffff";
-  modalToggle.style.color = "black";
-  body.style.opacity = "0.2";
 
-  // focus first child
+  // Focus first child
   firstTabStop.focus();
 
   function trapTabKey(e) {
@@ -53,7 +47,8 @@ function openModal() {
           e.preventDefault();
           lastTabStop.focus();
         }
-        //TAB
+
+        // TAB
       } else {
         if (document.activeElement === lastTabStop) {
           e.preventDefault();
@@ -61,22 +56,23 @@ function openModal() {
         }
       }
     }
+
     // ESCAPE
     if (e.keyCode === 27) {
       closeModal();
     }
   }
-  document.querySelector(".dim").setAttribute("aria-hidden", true);
+
+  document.querySelector(".wrapper").setAttribute("aria-hidden", true);
 }
+
 function closeModal() {
   // Hide the modal and overlay
   modal.style.display = "none";
   modalOverlay.style.display = "none";
-  modalToggle.style.background = "rgb(103, 103, 139)";
-  modalToggle.style.color = "#ffffff";
-  body.style.opacity = "1.0";
 
   // Set focus back to element that had it before the modal was opened
   focusedElementBeforeModal.focus();
+
   document.querySelector(".wrapper").removeAttribute("aria-hidden");
 }
